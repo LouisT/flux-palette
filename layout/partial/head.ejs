@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="/images/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/images/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/images/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="/images/favicon/site.webmanifest" />
+<title><%= (page.title ? page.title + ' | ' : '') %><%= config.title %><%= (config.subtitle ? ' ' + config.subtitle : '') %></title>
+<% if (config.description) { %>
+<meta name="description" content="<%= config.description %>">
+<% } %>
+<%
+  var palettes = palette_list ? palette_list() : [],
+    defaultFile = 'abyssal-blue.css';
+  if (palettes.length) {
+    // fallback to the first palette file
+    defaultFile = palettes[0].file || defaultFile;
+
+    // if a default_palette key is set and matches, use that
+    if (theme.palette_selector.default) {
+      palettes.forEach(function (p) {
+        if (p.key === theme.palette_selector.default && p.file) {
+          defaultFile = p.file;
+        }
+      });
+    }
+  }
+  var paletteFolder = theme.palette_selector.palette_folder || 'css/palettes';
+  paletteFolder = paletteFolder.replace(/^\/+/, '').replace(/\/+$/, '');
+%>
+<link id="palette-css" rel="stylesheet" href="<%= url_for('/' + paletteFolder + '/' + defaultFile) %>">
+<link rel="stylesheet" href="<%= url_for('/css/base.css') %>">
+<script src="<%= url_for('/js/encrypted-post.js') %>"></script>

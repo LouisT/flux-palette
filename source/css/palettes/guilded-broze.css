@@ -1,0 +1,33 @@
+:root {
+    /* Backgrounds (Dark Bronze Tint) */
+    --bg: #0c0b09;
+    --bg-black: #030201;
+    --bg-alt: #161411;
+    --bg-card: #211c16;
+    --bg-radial-start: #2e251a;
+    --bg-header-end: #241e18;
+    --bg-tooltip: rgba(20, 18, 15, 0.96);
+
+    /* Text */
+    --text: #f5f3f0;
+    --text-white: #ffffff;
+    --text-light: #e6e2de;
+    --text-sidebar: #f5f1eb;
+    --muted: #c9c2b8;
+
+    /* Primary accent family (Bronze) */
+    --accent: #CD7F32;
+    --accent-soft: rgba(205, 127, 50, 0.35);
+    --accent-muted: #8a5521;
+    --accent-bright: #e8a564;
+    --focus-ring: rgba(205, 127, 50, 0.6);
+
+    /* Borders & Shadows */
+    --border: #453322;
+    --border-card: rgba(255, 255, 255, 0.05);
+    --border-sidebar: rgba(255, 255, 255, 0.07);
+    --border-code: #2e2820;
+    --shadow-soft: 0 10px 30px rgba(25, 15, 5, 0.7);
+    --shadow-header: 0 8px 20px rgba(20, 12, 5, 0.6);
+    --shadow-tooltip: 0 12px 30px rgba(30, 20, 10, 0.85);
+}

@@ -1,0 +1,33 @@
+:root {
+    /* Backgrounds (Teal-Black Tint) */
+    --bg: #0a0c0c;
+    --bg-black: #000202;
+    --bg-alt: #0e1414;
+    --bg-card: #151f1f;
+    --bg-radial-start: #122424;
+    --bg-header-end: #101c1c;
+    --bg-tooltip: rgba(10, 15, 15, 0.96);
+
+    /* Text */
+    --text: #f0f5f5;
+    --text-white: #ffffff;
+    --text-light: #dfe6e6;
+    --text-sidebar: #eef5f5;
+    --muted: #acc2c2;
+
+    /* Primary accent family (Teal) */
+    --accent: #2DD4BF;
+    --accent-soft: rgba(45, 212, 191, 0.35);
+    --accent-muted: #1a8a7c;
+    --accent-bright: #63e6d5;
+    --focus-ring: rgba(45, 212, 191, 0.6);
+
+    /* Borders & Shadows */
+    --border: #203836;
+    --border-card: rgba(255, 255, 255, 0.05);
+    --border-sidebar: rgba(255, 255, 255, 0.07);
+    --border-code: #1c2626;
+    --shadow-soft: 0 10px 30px rgba(5, 25, 25, 0.7);
+    --shadow-header: 0 8px 20px rgba(0, 15, 15, 0.6);
+    --shadow-tooltip: 0 12px 30px rgba(10, 30, 30, 0.85);
+}

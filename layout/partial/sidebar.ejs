@@ -1,0 +1,93 @@
+<div class="sidebar-section">
+  <h3>About</h3>
+  <p><%= config.description || 'Just a dumb journal.' %></p>
+</div>
+<div class="sidebar-section">
+  <h3>Recent Posts</h3>
+  <ul>
+    <% site.posts.sort('date', -1).limit(5).forEach(function(post) { %>
+    <li>
+      <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+      <% if (post.encrypted) { %>
+      <%- partial('partial/lock') %>
+      <% } %>
+    </li>
+    <% }) %>
+  </ul>
+</div>
+<div class="sidebar-section">
+  <h3>Archives</h3>
+  <a href="<%= url_for('/archives') %>">View all</a>
+</div>
+<% if (theme.palette_selector.enabled) { %>
+<%
+  var palettes = palette_list ? palette_list() : [];
+  var paletteFolder = theme.palette_selector.palette_folder || 'css';
+  paletteFolder = paletteFolder.replace(/^\/+/, '').replace(/\/+$/, '');
+%>
+<div class="sidebar-section">
+  <h3>Palette</h3>
+  <div class="palette-switcher">
+    <select id="palette-select">
+      <% palettes.forEach(function (p) { %>
+      <option value="<%= p.file %>">
+        <%= p.name || p.key || p.file %>
+      </option>
+      <% }); %>
+    </select>
+  </div>
+</div>
+<% if (palettes.length) { %>
+<script>
+  (function() {
+    var STORAGE_KEY = 'theme_palette',
+      paletteLink = document.getElementById('palette-css'),
+      select = document.getElementById('palette-select');
+    if (!paletteLink || !select)
+      return;
+
+    var base = '<%= url_for("/css/palettes/") %>';
+
+    // Collect allowed values from the config-driven <option>s
+    var allowed = Array.prototype.map.call(select.options, function(opt) {
+      return opt.value;
+    });
+
+    function applyPalette(file) {
+      if (!file)
+        return;
+      paletteLink.setAttribute('href', base + file);
+    }
+
+    // On load: try saved palette, but only if it exists in the allowed list
+    try {
+      var saved = localStorage.getItem(STORAGE_KEY);
+      if (saved && allowed.indexOf(saved) !== -1) {
+        applyPalette(saved);
+        select.value = saved;
+      } else {
+        // if no valid saved value, sync storage with current default selected option
+        var current = select.value;
+        if (current && allowed.indexOf(current) !== -1) {
+          applyPalette(current);
+          localStorage.setItem(STORAGE_KEY, current);
+        }
+      }
+    } catch (e) {
+      // ignore storage errors
+    }
+
+    select.addEventListener('change', function() {
+      var file = this.value;
+      applyPalette(file);
+
+      try {
+        localStorage.setItem(STORAGE_KEY, file);
+      } catch (e) {
+        // ignore
+      }
+    });
+  })();
+</script>
+<% } %>
+<% } %>

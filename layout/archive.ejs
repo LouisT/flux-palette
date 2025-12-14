@@ -1,0 +1,28 @@
+<section class="archive">
+  <h1>Archives</h1>
+  <% var years = {}; %>
+  <% site.posts.sort('date', -1).forEach(function(post) {
+       var y = post.date.year();
+       years[y] = years[y] || [];
+       years[y].push(post);
+     });
+  %>
+  <% Object.keys(years).sort(function(a,b){return b-a;}).forEach(function(year) { %>
+  <div class="archive-year">
+    <h2><%= year %></h2>
+    <ul>
+      <% years[year].forEach(function(post) { %>
+      <li>
+        <span class="archive-date">
+          <%= date(post.date, 'MM-DD') %>
+        </span>
+        <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+        <% if (post.encrypted) { %>
+        <%- partial('partial/lock') %>
+        <% } %>
+      </li>
+      <% }) %>
+    </ul>
+  </div>
+  <% }) %>
+</section>

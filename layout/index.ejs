@@ -1,0 +1,42 @@
+<% page.posts = page.posts || site.posts; %>
+<section class="post-list">
+  <% page.posts.sort('date', -1).forEach(function(post) { %>
+  <article class="post-card">
+    <div class="post-meta-top">
+      <h2 class="post-title">
+        <a href="<%= url_for(post.path) %>"><%= post.title %></a>
+        <% if (post.encrypted) { %>
+        <%- partial('partial/lock') %>
+        <% } %>
+      </h2>
+    </div>
+    <div class="post-meta">
+      <time datetime="<%= date_xml(post.date) %>">
+        <%= date(post.date, config.date_format || 'YYYY-MM-DD') %> - <%= read_time(post, true) %>
+      </time>
+      <% if (post.tags && post.tags.length) { %>
+      <span class="meta-sep">•</span>
+      <span class="tags">
+        <% post.tags.forEach(function(tag, i) { %>
+        <a href="<%= url_for(tag.path) %>"><%= tag.name %></a><%= i < post.tags.length - 1 ? ', ' : '' %>
+        <% }) %>
+      </span>
+      <% } %>
+    </div>
+    <% const preview = strip_html(post.excerpt || post.content); %>
+    <div class="post-excerpt">
+      <%= preview.length > 200 ? preview.substring(0, 200) + '…' : preview %>
+    </div>
+    <div class="post-meta-bottom">
+      <a class="read-more" href="<%= url_for(post.path) %>">Read more →</a>
+      <% const shortLink = short_url(post); %>
+      <% const shortHash = short_hash(post); %>
+      <% if (shortLink && shortHash) { %>
+      <span class="post-shortlink">
+        <a href="<%= shortLink %>">#<%= shortHash %></a>
+      </span>
+      <% } %>
+    </div>
+  </article>
+  <% }) %>
+</section>

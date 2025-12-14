@@ -1,0 +1,33 @@
+:root {
+    /* Backgrounds */
+    --bg: #050505;
+    --bg-black: #000000;
+    --bg-alt: #0b0303;
+    --bg-card: #160707;
+    --bg-radial-start: #1b0707;
+    --bg-header-end: #1a0505;
+    --bg-tooltip: rgba(5, 5, 5, 0.96);
+
+    /* Text */
+    --text: #f5f2f2;
+    --text-white: #ffffff;
+    --text-light: #dddddd; /* Excerpts */
+    --text-sidebar: #f0f0f0;
+    --muted: #c2a2a2;
+
+    /* Primary accent family (lighter red) */
+    --accent: #c01515;
+    --accent-soft: rgba(192, 21, 21, 0.35);
+    --accent-muted: #a12a2a;
+    --accent-bright: #ff5c5c;
+    --focus-ring: rgba(255, 92, 92, 0.6);
+
+    /* Borders & Shadows */
+    --border: #301616;
+    --border-card: rgba(255, 255, 255, 0.02);
+    --border-sidebar: rgba(255, 255, 255, 0.04);
+    --border-code: #222222;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.8);
+    --shadow-header: 0 8px 20px rgba(0, 0, 0, 0.7);
+    --shadow-tooltip: 0 12px 30px rgba(0, 0, 0, 0.85);
+}

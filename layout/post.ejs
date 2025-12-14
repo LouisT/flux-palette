@@ -1,0 +1,44 @@
+<article class="post-single">
+  <h2 class="post-title">
+    <a href="<%= url_for(page.path) %>"><%= page.title %></a>
+  </h2>
+  <div class="post-meta">
+    <time datetime="<%= date_xml(page.date) %>">
+      <%= date(page.date, config.date_format || 'YYYY-MM-DD') %>&nbsp;-&nbsp;<%= read_time(page, true) %>
+    </time>
+    <% if (page.categories && page.categories.length) { %>
+    <span class="meta-sep">•</span>
+    <% page.categories.forEach(function(cat, i) { %>
+    <a href="<%= url_for(cat.path) %>"><%= cat.name %></a><%= i < page.categories.length - 1 ? ', ' : '' %>
+    <% }) %>
+    <% } %>
+  </div>
+  <div class="post-content">
+    <%- page.content %>
+  </div>
+  <% if (page.tags && page.tags.length) { %>
+  <div class="post-tags">
+    Tags:
+    <% page.tags.forEach(function(tag, i) { %>
+    <a href="<%= url_for(tag.path) %>"><%= tag.name %></a><%= i < page.tags.length - 1 ? ', ' : '' %>
+    <% }) %>
+  </div>
+  <% } %>
+  <div class="post-meta-bottom">
+    <nav class="post-nav">
+      <% if (page.prev) { %>
+      <a class="post-prev" href="<%= url_for(page.prev.path) %>">← <%= page.prev.title %></a>
+      <% } %>
+      <% if (page.next) { %>
+      <a class="post-next" href="<%= url_for(page.next.path) %>"><%= page.next.title %> →</a>
+      <% } %>
+    </nav>
+    <% const shortLink = short_url(page); %>
+    <% const shortHash = short_hash(page); %>
+    <% if (shortLink && shortHash) { %>
+    <span class="post-shortlink">
+      <a href="<%= shortLink %>">#<%= shortHash %></a>
+    </span>
+    <% } %>
+  </div>
+</article>

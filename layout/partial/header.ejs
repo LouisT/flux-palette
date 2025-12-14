@@ -1,0 +1,28 @@
+<div class="header-inner">
+  <div class="logo">
+    <a href="<%= config.root %>">
+      <span class="logo-mark">●</span>
+      <span class="logo-text-wrap">
+        <span class="logo-text">
+          <%= theme.logo_text || config.title %>
+        </span>
+        <% if (theme.subtitle || config.subtitle) { %>
+        <span class="logo-subtitle">
+          <%= theme.subtitle || config.subtitle %>
+        </span>
+        <% } %>
+      </span>
+    </a>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <% for (var name in theme.menu) { %>
+      <li>
+        <a href="<%= url_for(theme.menu[name]) %>" class="<%= (url_for(path) === url_for(theme.menu[name])) ? 'active' : '' %>">
+          <%= name %>
+        </a>
+      </li>
+      <% } %>
+    </ul>
+  </nav>
+</div>

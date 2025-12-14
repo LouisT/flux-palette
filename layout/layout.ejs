@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="<%= config.language || 'en' %>">
+<head>
+  <%- partial('partial/head') %>
+</head>
+<body class="site">
+  <header class="site-header">
+    <%- partial('partial/header') %>
+  </header>
+  <div class="site-body">
+    <main class="site-main">
+      <%- body %>
+    </main>
+    <aside class="site-sidebar">
+      <%- partial('partial/sidebar') %>
+    </aside>
+  </div>
+  <footer class="site-footer">
+    <%- partial('partial/footer') %>
+  </footer>
+</body>
+</html>

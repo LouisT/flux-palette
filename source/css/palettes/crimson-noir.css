@@ -1,0 +1,33 @@
+:root {
+    /* Backgrounds (Warm Crimson Tint) */
+    --bg: #0c0a0a;
+    --bg-black: #030101;
+    --bg-alt: #171010;
+    --bg-card: #211515;
+    --bg-radial-start: #2e1717;
+    --bg-header-end: #241414;
+    --bg-tooltip: rgba(20, 10, 10, 0.96);
+
+    /* Text */
+    --text: #f5f0f0;
+    --text-white: #ffffff;
+    --text-light: #e6dede;
+    --text-sidebar: #f5ebeb;
+    --muted: #c9b0b0;
+
+    /* Primary accent family (Crimson Red) */
+    --accent: #E63946;
+    --accent-soft: rgba(230, 57, 70, 0.35);
+    --accent-muted: #a8222d;
+    --accent-bright: #ff5c69;
+    --focus-ring: rgba(230, 57, 70, 0.6);
+
+    /* Borders & Shadows */
+    --border: #452225;
+    --border-card: rgba(255, 255, 255, 0.05);
+    --border-sidebar: rgba(255, 255, 255, 0.07);
+    --border-code: #2e1e1f;
+    --shadow-soft: 0 10px 30px rgba(30, 10, 10, 0.7);
+    --shadow-header: 0 8px 20px rgba(20, 5, 5, 0.6);
+    --shadow-tooltip: 0 12px 30px rgba(30, 15, 15, 0.85);
+}

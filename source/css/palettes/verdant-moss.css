@@ -1,0 +1,33 @@
+:root {
+    /* Backgrounds (Forest Tint) */
+    --bg: #0a0c0a;
+    --bg-black: #000300;
+    --bg-alt: #0e120e;
+    --bg-card: #151c15;
+    --bg-radial-start: #122112;
+    --bg-header-end: #111a11;
+    --bg-tooltip: rgba(10, 15, 10, 0.96);
+
+    /* Text */
+    --text: #f1f5f1;
+    --text-white: #ffffff;
+    --text-light: #dde3dd;
+    --text-sidebar: #eef5ee;
+    --muted: #aebcae;
+
+    /* Primary accent family (Emerald Green) */
+    --accent: #46C766;
+    --accent-soft: rgba(70, 199, 102, 0.35);
+    --accent-muted: #2e8a44;
+    --accent-bright: #6de38a;
+    --focus-ring: rgba(70, 199, 102, 0.6);
+
+    /* Borders & Shadows */
+    --border: #1f3323;
+    --border-card: rgba(255, 255, 255, 0.05);
+    --border-sidebar: rgba(255, 255, 255, 0.07);
+    --border-code: #232e23;
+    --shadow-soft: 0 10px 30px rgba(5, 20, 5, 0.7);
+    --shadow-header: 0 8px 20px rgba(0, 15, 0, 0.6);
+    --shadow-tooltip: 0 12px 30px rgba(5, 25, 5, 0.85);
+}

@@ -1,0 +1,9 @@
+{
+  "name": "hexo-theme-flux-palette",
+  "version": "1.0.0",
+  "description": "A minimal Hexo theme with a focus on color palettes and custom scripts.",
+  "main": "index.js",
+  "author": "LTDev LLC",
+  "license": "MIT",
+  "dependencies": {}
+}

@@ -1,0 +1,33 @@
+:root {
+    /* Colors: Backgrounds (Lighter Dark Mode) */
+    --bg: #0a0a0a;
+    --bg-black: #000000;
+    --bg-alt: #170f0e; /* Warm, lighter dark */
+    --bg-card: #211513; /* Rust-tinted charcoal */
+    --bg-radial-start: #2e1a17;
+    --bg-header-end: #261614;
+    --bg-tooltip: rgba(15, 10, 10, 0.96);
+
+    /* Colors: Text */
+    --text: #f5f2f2;
+    --text-white: #ffffff;
+    --text-light: #e0e0e0;
+    --text-sidebar: #f2f2f2;
+    --muted: #c9b8b6;
+
+    /* Primary accent family - Lightened Terracotta */
+    --accent: #D6503B; /* Lightened from #BC3823 */
+    --accent-soft: rgba(214, 80, 59, 0.35);
+    --accent-muted: #a63a29;
+    --accent-bright: #f06a56; /* Very bright coral for hover */
+    --focus-ring: rgba(214, 80, 59, 0.6);
+
+    /* Colors: Borders & Shadows (Lighter definition) */
+    --border: #452825; /* Lightened reddish-brown border */
+    --border-card: rgba(255, 255, 255, 0.05);
+    --border-sidebar: rgba(255, 255, 255, 0.07);
+    --border-code: #2e2e2e;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.7);
+    --shadow-header: 0 8px 20px rgba(0, 0, 0, 0.6);
+    --shadow-tooltip: 0 12px 30px rgba(0, 0, 0, 0.85);
+}

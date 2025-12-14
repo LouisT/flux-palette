@@ -1,0 +1,33 @@
+:root {
+    /* Backgrounds (Rose-Black Tint) */
+    --bg: #0c0a0b;
+    --bg-black: #030001;
+    --bg-alt: #140e10;
+    --bg-card: #1f1417;
+    --bg-radial-start: #2b161c;
+    --bg-header-end: #211418;
+    --bg-tooltip: rgba(20, 10, 15, 0.96);
+
+    /* Text */
+    --text: #f5f2f3;
+    --text-white: #ffffff;
+    --text-light: #e6dee0;
+    --text-sidebar: #f5ebed;
+    --muted: #c9b0b6;
+
+    /* Primary accent family (Hot Pink) */
+    --accent: #FF2E63;
+    --accent-soft: rgba(255, 46, 99, 0.35);
+    --accent-muted: #b0153d;
+    --accent-bright: #ff5c85;
+    --focus-ring: rgba(255, 46, 99, 0.6);
+
+    /* Borders & Shadows */
+    --border: #421e2b;
+    --border-card: rgba(255, 255, 255, 0.05);
+    --border-sidebar: rgba(255, 255, 255, 0.07);
+    --border-code: #2e2226;
+    --shadow-soft: 0 10px 30px rgba(20, 0, 10, 0.7);
+    --shadow-header: 0 8px 20px rgba(15, 0, 5, 0.6);
+    --shadow-tooltip: 0 12px 30px rgba(25, 5, 15, 0.85);
+}

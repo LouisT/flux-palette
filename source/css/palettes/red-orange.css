@@ -1,0 +1,33 @@
+:root {
+    /* Colors: Backgrounds (Lighter Dark Mode) */
+    --bg: #0a0a0a;
+    --bg-black: #000000;
+    --bg-alt: #170e0d; /* Warm dark with orange undertone */
+    --bg-card: #211311; /* Red-orange tinted charcoal */
+    --bg-radial-start: #2e1815; /* Gradient start */
+    --bg-header-end: #261210; /* Header gradient end */
+    --bg-tooltip: rgba(15, 10, 10, 0.96);
+
+    /* Colors: Text */
+    --text: #f5f2f2;
+    --text-white: #ffffff;
+    --text-light: #e0e0e0;
+    --text-sidebar: #f2f2f2;
+    --muted: #c9b6b4; /* Warm grey */
+
+    /* Primary accent family - Red Orange */
+    --accent: #FF4F38;
+    --accent-soft: rgba(255, 79, 56, 0.35);
+    --accent-muted: #cc3f2d;
+    --accent-bright: #ff725e; /* Coral-orange for hover */
+    --focus-ring: rgba(255, 79, 56, 0.6);
+
+    /* Colors: Borders & Shadows (Lighter definition) */
+    --border: #45221f; /* Lighter red-orange border */
+    --border-card: rgba(255, 255, 255, 0.05);
+    --border-sidebar: rgba(255, 255, 255, 0.07);
+    --border-code: #2e2e2e;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.7);
+    --shadow-header: 0 8px 20px rgba(0, 0, 0, 0.6);
+    --shadow-tooltip: 0 12px 30px rgba(0, 0, 0, 0.85);
+}

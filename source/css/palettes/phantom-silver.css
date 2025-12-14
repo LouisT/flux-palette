@@ -1,0 +1,33 @@
+:root {
+    /* Backgrounds (Neutral Grey Tint) */
+    --bg: #0a0a0a;
+    --bg-black: #000000;
+    --bg-alt: #121212;
+    --bg-card: #1c1c1c;
+    --bg-radial-start: #262626;
+    --bg-header-end: #1f1f1f;
+    --bg-tooltip: rgba(15, 15, 15, 0.96);
+
+    /* Text */
+    --text: #f0f0f0;
+    --text-white: #ffffff;
+    --text-light: #e0e0e0;
+    --text-sidebar: #f5f5f5;
+    --muted: #a3a3a3;
+
+    /* Primary accent family (Platinum Silver) */
+    --accent: #E5E5E5;
+    --accent-soft: rgba(229, 229, 229, 0.25);
+    --accent-muted: #808080;
+    --accent-bright: #ffffff;
+    --focus-ring: rgba(255, 255, 255, 0.4);
+
+    /* Borders & Shadows */
+    --border: #333333;
+    --border-card: rgba(255, 255, 255, 0.06);
+    --border-sidebar: rgba(255, 255, 255, 0.08);
+    --border-code: #242424;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.8);
+    --shadow-header: 0 8px 20px rgba(0, 0, 0, 0.7);
+    --shadow-tooltip: 0 12px 30px rgba(0, 0, 0, 0.9);
+}

@@ -1,0 +1,34 @@
+menu: # site menu
+  Home: /
+  Archives: /archives/
+  Feed: /rss.xml
+
+rss: # RSS feed options
+  path: rss.xml # output file (relative to root)
+  limit: 20 # number of posts
+  include_drafts: false
+  include_future: false
+  mark_encrypted_in_title: true # prefix [Encrypted] to titles
+  add_encrypted_element: true # add <encrypted>true</encrypted>
+
+short_url: # short URL options
+  enabled: true # set to false to turn off all short URLs
+  prefix: s # /s/<hash>
+  length: 6 # characters in hash
+
+swc:
+  enabled: true # set to false to turn off SWC
+  target: es2020 # target environment
+  minify: true # set to false to disable minification
+  include: # folders to include
+    - js/
+  exclude: [] # folders to exclude
+
+read_time: # read time options
+  enabled: true # set to false to turn off read time
+  write_front_matter: true # write read time to front matter
+
+palette_selector: # palette selector
+  enabled: true # set to false to turn off palette selector
+  default: abyssal-blue # default palette selection
+  palette_folder: css/palettes # folder for palette css files

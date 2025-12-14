@@ -1,0 +1,33 @@
+:root {
+    /* Backgrounds (Deep Violet Tint) */
+    --bg: #0b0a0d;
+    --bg-black: #020103;
+    --bg-alt: #13111a;
+    --bg-card: #1c1826;
+    --bg-radial-start: #261f36;
+    --bg-header-end: #1e192b;
+    --bg-tooltip: rgba(15, 10, 25, 0.96);
+
+    /* Text */
+    --text: #f3f0f5;
+    --text-white: #ffffff;
+    --text-light: #e2dde6;
+    --text-sidebar: #f0ebf5;
+    --muted: #b9aec2;
+
+    /* Primary accent family (Electric Violet) */
+    --accent: #8B5CF6;
+    --accent-soft: rgba(139, 92, 246, 0.35);
+    --accent-muted: #5e39b3;
+    --accent-bright: #a780ff;
+    --focus-ring: rgba(139, 92, 246, 0.6);
+
+    /* Borders & Shadows */
+    --border: #352652;
+    --border-card: rgba(255, 255, 255, 0.05);
+    --border-sidebar: rgba(255, 255, 255, 0.07);
+    --border-code: #24202e;
+    --shadow-soft: 0 10px 30px rgba(20, 10, 40, 0.7);
+    --shadow-header: 0 8px 20px rgba(15, 5, 30, 0.6);
+    --shadow-tooltip: 0 12px 30px rgba(25, 15, 50, 0.85);
+}
