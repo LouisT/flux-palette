@@ -2,7 +2,7 @@
 
 A responsive blog/journal [Hexo](https://hexo.io/) theme designed around the idea of multiple color palettes.
 
-[DEMO](https://https://flux-palette.pages.dev/)
+[DEMO](https://flux-palette.pages.dev/)
 
 - [Features](#features)
 - [Install](#install)
