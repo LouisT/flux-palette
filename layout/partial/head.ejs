@@ -11,23 +11,18 @@
 <% } %>
 <%
   var palettes = palette_list ? palette_list() : [],
-    defaultFile = 'abyssal-blue.css';
+    defaultKey = theme.palette_selector ? theme.palette_selector.default : null,
+    defaultPalette = null;
   if (palettes.length) {
-    // fallback to the first palette file
-    defaultFile = palettes[0].file || defaultFile;
-
-    // if a default_palette key is set and matches, use that
-    if (theme.palette_selector.default) {
-      palettes.forEach(function (p) {
-        if (p.key === theme.palette_selector.default && p.file) {
-          defaultFile = p.file;
-        }
-      });
+    if (defaultKey) {
+      defaultPalette = palettes.find(function (p) { return p.key === defaultKey });
+    }
+    if (!defaultPalette) {
+      defaultPalette = palettes[0];
     }
   }
-  var paletteFolder = theme.palette_selector.palette_folder || 'css/palettes';
-  paletteFolder = paletteFolder.replace(/^\/+/, '').replace(/\/+$/, '');
+  var defaultFile = defaultPalette ? defaultPalette.file : 'abyssal-blue.css';
 %>
-<link id="palette-css" rel="stylesheet" href="<%= url_for('/' + paletteFolder + '/' + defaultFile) %>">
+<link id="palette-css" rel="stylesheet" href="<%= url_for('/css/palettes/' + defaultFile) %>">
 <link rel="stylesheet" href="<%= url_for('/css/base.css') %>">
 <script src="<%= url_for('/js/encrypted-post.js') %>"></script>

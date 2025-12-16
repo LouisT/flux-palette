@@ -15,22 +15,27 @@
     <% }) %>
   </ul>
 </div>
-<div class="sidebar-section">
-  <h3>Archives</h3>
-  <a href="<%= url_for('/archives') %>">View all</a>
-</div>
 <% if (theme.palette_selector.enabled) { %>
 <%
-  var palettes = palette_list ? palette_list() : [];
-  var paletteFolder = theme.palette_selector.palette_folder || 'css';
-  paletteFolder = paletteFolder.replace(/^\/+/, '').replace(/\/+$/, '');
+  var palettes = palette_list ? palette_list() : [],
+    defaultKey = theme.palette_selector ? theme.palette_selector.default : null,
+    defaultPalette = null;
+  if (palettes.length) {
+    if (defaultKey) {
+      defaultPalette = palettes.find(function (p) { return p.key === defaultKey});
+    }
+    if (!defaultPalette) {
+      defaultPalette = palettes[0];
+    }
+  }
+  var defaultFile = defaultPalette ? defaultPalette.file : (palettes[0] && palettes[0].file);
 %>
 <div class="sidebar-section">
   <h3>Palette</h3>
   <div class="palette-switcher">
     <select id="palette-select">
       <% palettes.forEach(function (p) { %>
-      <option value="<%= p.file %>">
+      <option value="<%= p.file %>" <%= (defaultPalette && defaultPalette.key === p.key) ? 'selected' : '' %>>
         <%= p.name || p.key || p.file %>
       </option>
       <% }); %>
@@ -46,6 +51,7 @@
     if (!paletteLink || !select)
       return;
 
+    // Base URL for palette CSS files
     var base = '<%= url_for("/css/palettes/") %>';
 
     // Collect allowed values from the config-driven <option>s
@@ -77,10 +83,10 @@
       // ignore storage errors
     }
 
+    // On change: apply palette
     select.addEventListener('change', function() {
       var file = this.value;
       applyPalette(file);
-
       try {
         localStorage.setItem(STORAGE_KEY, file);
       } catch (e) {
