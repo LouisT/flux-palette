@@ -49,7 +49,7 @@ var sidebarCfg = theme.sidebar || {},
   var palettes = palette_list ? palette_list() : [],
     defaultKey = (
         theme.sidebar?.palette_selector && theme.sidebar.palette_selector?.default
-    ) ? theme.sidebar.palette_selector.default_palette : 'abyssal-blue',
+    ) ? theme.sidebar.palette_selector.default : 'abyssal-blue',
     hasDefault = palettes.some(function (p) { return p.key === defaultKey; });
   if (!hasDefault && palettes.length) {
     defaultKey = palettes[0].key;
