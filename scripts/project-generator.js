@@ -8,11 +8,12 @@ let fs = require('fs'),
 const projectsListing = [];
 
 // Load projects from source/_projects/*.md (file-based projects)
-function loadFolderProjects(ctx) {
+function loadFolderProjects(ctx, baseDir) {
     if (projectsListing.length)
         return projectsListing; // already loaded
 
-    const base = path.join(ctx.base_dir, 'source', '_projects');
+    // Check if source/_projects exists
+    const base = path.join(baseDir || ctx.base_dir, 'source', '_projects');
     if (!fs.existsSync(base))
         return [];
 
@@ -97,7 +98,7 @@ hexo.extend.generator.register('theme_projects', function (locals) {
         title = projCfg.title || 'Projects'; // Projects title, defaults to "Projects", not currently used
 
     // Load all projects
-    let allProjects = loadFolderProjects(this, locals);
+    let allProjects = loadFolderProjects(this, hexo.base_dir);
     if (!allProjects.length)
         return [];
 
@@ -177,7 +178,7 @@ hexo.extend.helper.register('recent_projects', function (limit) {
         return [];
 
     // Load all projects
-    const all = loadFolderProjects(ctx);
+    const all = loadFolderProjects(ctx, hexo.base_dir);
     if (!all.length)
         return [];
 
