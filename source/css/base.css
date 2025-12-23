@@ -879,6 +879,30 @@ figure {
     }
 }
 
+/* Spotify embed */
+.spotify-embed-inline {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: 4px;
+}
+
+.spotify-embed-inline iframe {
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+
+.post-content p > .spotify-embed-inline {
+    display: inline-block;
+    margin: 0;
+}
+
+.post-content p:has(.spotify-embed-inline) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 @media (min-width: 769px) {
     .main-nav {
         display: block;
