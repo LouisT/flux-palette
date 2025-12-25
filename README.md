@@ -109,25 +109,35 @@ project_tags:
 This is a post about my project...
 ```
 
-### Spotify embeds
-You can embed sptofy tracks and playlists within either the blog or project postings using a spotify short tag.
+### Embeds
+You can embed content from various platforms like YouTube, Spotify, and Vimeo within your posts using a powerful `embed` tag.
+
+The plugin can automatically detect the platform from a URL.
+
 ```yml
 ---
-title: Flux Palette
+title: My Awesome Post
 date: 2025-12-1
-project_url: https://github.com/LouisT/flux-palette
-project_summary: "The Flux Palette source."
-project_tags:
-  - javascript
-  - hexo
 ---
-Here is a song:
-{% spotify https://open.spotify.com/track/3cLqK3LPVrTIzfENVmYLoU?si=eb784dc3ebe142a1 %}
-Here is a playlist:
-{% spotify https://open.spotify.com/playlist/1LcfcxzGNcselP4PIGeQ6V?si=334458bd434b42ce %}
-Rest of the post...
+{% embed https://www.youtube.com/watch?v=dQw4w9WgXcQ %}
+{% embed https://open.spotify.com/track/3cLqK3LPVrTIzfENVmYLoU %}
+{% embed https://vimeo.com/59859181 %}
 ```
 
+If you are using an ID instead of a URL, you must provide a hint for the platform as the second argument.
+
+```yml
+{% embed dQw4w9WgXcQ youtube %}
+{% embed 59859181 vimeo %}
+{% embed 1LcfcxzGNcselP4PIGeQ6V spotify playlist %}
+```
+
+You may also use provider tags such as:
+```yml
+{% youtube dQw4w9WgXcQ %}
+{% spotify 1LcfcxzGNcselP4PIGeQ6V playlist %}
+{% vimeo 59859181 %}
+```
 
 ### _config.yml
 

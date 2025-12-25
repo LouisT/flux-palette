@@ -793,7 +793,7 @@ figure {
     background: transparent;
     border: none;
     padding: 0;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
 }
 
 .spotify-embed-inline iframe {
@@ -810,6 +810,23 @@ figure {
 .post-content p:has(.spotify-embed-inline) {
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+/* Other embeded media */
+.video-embed-container {
+    margin-bottom: 12px;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 /* Responsive */
@@ -986,19 +1003,13 @@ figure {
         margin-top: 4rem;
     }
 
-    .post-card,
-    .post-single,
-    .page-single {
+    .post-card, .post-single, .page-single {
         padding: 2.5rem 3rem;
         margin-bottom: 2rem;
     }
 
-    h1 {
-        font-size: 2.8rem;
-    }
-    h2 {
-        font-size: 2.2rem;
-    }
+    h1 { font-size: 2.8rem; }
+    h2 { font-size: 2.2rem; }
 
     .sidebar-section {
         padding: 2rem;
