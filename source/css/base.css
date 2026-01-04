@@ -744,7 +744,7 @@ figure {
     padding: 0.5rem 2.25rem 0.5rem 0.75rem;
     border-radius: 999px;
     border: 1px solid var(--border);
-    background: #050505;
+    background: var(--bg-card);
     color: var(--text);
     font: inherit;
 }
@@ -753,6 +753,7 @@ figure {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 1px var(--accent-soft);
+    background: var(--bg-alt);
 }
 
 .search-page .search-clear-btn {
