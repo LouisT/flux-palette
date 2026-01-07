@@ -21,12 +21,11 @@
 %>
 <script>
   (function() {
-    var STORAGE_KEY = 'flux-palette',
-      fallback = '<%= defaultKey %>';
+    var fallback = '<%= defaultKey %>';
     key = fallback;
     try {
       let hashget = new URLSearchParams(window.location.hash.substring(1) ?? '');
-      key = hashget.get('theme') || localStorage.getItem(STORAGE_KEY) || fallback
+      key = hashget.get('theme') || localStorage.getItem('flux-palette-theme') || fallback
     } catch (e) {}
     document.documentElement.setAttribute('data-palette', String(key).replace(/[^a-zA-Z0-9_-]/g, ''));
   })();
